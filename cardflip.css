@@ -1,0 +1,90 @@
+:root {
+    --first-color: #999999;
+    --second-color: #008090;
+}
+
+div.card-container {
+    height: 300px;
+    width: 250px;
+    perspective: 1000px;
+    margin: 0 25px;
+    display: flex;
+
+
+
+    & div.card-content {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        transform-style: preserve-3d;
+        transition: transform 1s linear 1ms;
+
+    }
+
+    & div.card-front, div.card-back {
+        position: absolute;
+        padding: 15px;
+        height: 100%;
+        width: 100%;
+        backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+    & div.card-front {
+        background-color: var(--first-color);
+    }
+    & div.card-back {
+        background-color: var(--second-color);
+        transform: rotateY(180deg) translateX(30px);
+    }
+}
+div.card-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+div.card-container:active div.card-content {
+    transform: rotateY(180deg);
+}
+
+.card-container:hover div.card-content, .is-flipped {
+    transform: rotateY(180deg);
+}
+
+.certification{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end; 
+    width: 100%;
+}
+.certification img{
+    width: 10%;
+}
+
+.certification p{
+    margin: 0;
+    padding: 0;
+}
+
+.bouteille{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.bouteille img{
+    height: 150px;
+}
+
+.description ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+.description h3{
+    text-align: center;
+}
+
