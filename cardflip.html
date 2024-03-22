@@ -1,50 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cardflip.css">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Game Card</title>
+	<link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div class="card-container">
-        <div class="card-content" id="card">
-            <div class="card-front">
-                <div class="certification">
-                    <img src="https://png.pngtree.com/png-vector/20220521/ourmid/pngtree-reverse-motion-icon-arrow-vector-png-image_4697572.png" alt="">
-                    <p><strong>Certifié</strong></p>
-                    <img src="https://static.vecteezy.com/system/resources/previews/011/318/779/original/certificate-icon-logo-design-png.png" alt="Certification vin"> 
-                    <img src="https://static.vecteezy.com/system/resources/previews/011/318/779/original/certificate-icon-logo-design-png.png" alt="Certification vin"> 
-                </div>
-                <div class="bouteille">
-                    <img src="https://images.vivino.com/thumbs/7LOUzPDnQ1u9u4yncGvwdw_pb_x960.png" alt="Bouteille">
-                </div>
-                <div class="description">
-                    <h3>Vin rouge d'Alsace</h3>
-                    <ul>
-                        <li>Fruité</li>
-                        <li>Boisé</li>
-                        <li>Rouge</li>
-                        <li>Cendré</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card-back">
-                <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis 
-                </p>
-            </div>
+    <div class="card">
+        <div class="card-front">
+        <h2>Front Content</h2>
+        <button class="flip-button" onclick="flipCard(this)">⏎</button>
+        </div>
+        <div class="card-back">
+        <h2>Back Content</h2>
+        <button class="flip-button" onclick="flipCard(this)">⏎</button>
         </div>
     </div>
+    </div>
+    <div class="card-container">
+    <div class="card">
+        <div class="card-front">
+        <h2>Front Content</h2>
+        <button class="flip-button" onclick="flipCard(this)">⏎</button>
+        </div>
+        <div class="card-back">
+        <h2>Back Content</h2>
+        <button class="flip-button" onclick="flipCard(this)">⏎</button>
+        </div>
+    </div>
+    </div>
     <script>
-        // Sélectionnez la carte
-        const card = document.getElementById('card');
-    
-        // Ajoutez un gestionnaire d'événements pour le clic sur la carte
-        card.addEventListener('click', function() {
-            // Basculez entre les classes pour la rotation de la carte
-            this.classList.toggle('is-flipped');
-        });
+        function flipCard(button) {
+        var card = button.parentNode.parentNode;
+        if (card.style.transform === 'rotateY(180deg)') {
+            card.style.transform = 'rotateY(0deg)';
+        } else {
+            card.style.transform = 'rotateY(180deg)';
+        }
+        }
     </script>
 </body>
 </html>
