@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Game Card</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="card-container">
+    <div class="card">
+        <div class="card-front">
+        <h2>Front Content</h2>
+        <button class="flip-button" onclick="flipCard(this)">⏎</button>
+        </div>
+        <div class="card-back">
+        <h2>Back Content</h2>
+        <button class="flip-button" onclick="flipCard(this)">⏎</button>
+        </div>
+    </div>
+    </div>
+    <div class="card-container">
+    <div class="card">
+        <div class="card-front">
+        <h2>Front Content</h2>
+        <button class="flip-button" onclick="flipCard(this)">⏎</button>
+        </div>
+        <div class="card-back">
+        <h2>Back Content</h2>
+        <button class="flip-button" onclick="flipCard(this)">⏎</button>
+        </div>
+    </div>
+    </div>
+    <script>
+        function flipCard(button) {
+  var card = button.parentNode.parentNode;
+  if (card.style.transform === 'rotateY(180deg)') {
+    card.style.transform = 'rotateY(0deg)';
+  } else {
+    card.style.transform = 'rotateY(180deg)';
+  }
+}
+    </script>
+</body>
+</html>
